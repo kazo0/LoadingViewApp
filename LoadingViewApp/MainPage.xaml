@@ -1,17 +1,25 @@
 ﻿<Page x:Class="LoadingViewApp.MainPage"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:local="using:LoadingViewApp"
-	xmlns:utu="using:Uno.Toolkit.UI"
-	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:local="using:LoadingViewApp"
+	  xmlns:utu="using:Uno.Toolkit.UI"
+	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal">
-			<Button Content="Start" Click="Start_Click" />
-			<Button Content="Stop" Click="Stop_Click" />
+			<Button Content="Start"
+					Command="{Binding MyCommand}" />
 		</StackPanel>
+		<utu:LoadingView Grid.Row="1"
+						 Source="{Binding MyCommand}">
+			<utu:LoadingView.LoadingContent>
+				<TextBlock Text="Loading..."
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center" />
+			</utu:LoadingView.LoadingContent>
+		</utu:LoadingView>
 	</Grid>
 </Page>
