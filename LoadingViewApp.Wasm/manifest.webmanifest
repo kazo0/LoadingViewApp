@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "LoadingViewApp",
+  "display": "standalone",
+  "name": "LoadingViewApp",
+  "short_name": "LoadingViewApp",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

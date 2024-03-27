@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"LoadingViewApp.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"LoadingViewApp.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
