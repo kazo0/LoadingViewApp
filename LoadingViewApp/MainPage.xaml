@@ -6,20 +6,42 @@
 	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
+			<RowDefinition Height="2*" />
 		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal">
-			<Button Content="Start"
+		<StackPanel Orientation="Horizontal"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+			<Button Content="Fire MyCommand"
+					Padding="50"
+					FontSize="24"
 					Command="{Binding MyCommand}" />
 		</StackPanel>
 		<utu:LoadingView Grid.Row="1"
 						 Source="{Binding MyCommand}">
 			<utu:LoadingView.LoadingContent>
-				<TextBlock Text="Loading..."
-						   HorizontalAlignment="Center"
-						   VerticalAlignment="Center" />
+				<Grid Background="CornflowerBlue">
+					<StackPanel VerticalAlignment="Center"
+								HorizontalAlignment="Center">
+						<TextBlock Text="MyCommand is running..."
+								   FontSize="24" />
+						<ProgressRing IsActive="True"
+								  HorizontalAlignment="Center"
+								  VerticalAlignment="Center"
+								  Width="200"
+								  Height="200" />
+					</StackPanel>
+					
+				</Grid>
 			</utu:LoadingView.LoadingContent>
+			<utu:LoadingView.Content>
+				<Grid Background="Tomato">
+					<TextBlock Text="Content"
+							   FontSize="24"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center" />
+				</Grid>
+			</utu:LoadingView.Content>
 		</utu:LoadingView>
 	</Grid>
 </Page>
